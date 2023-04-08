@@ -1,0 +1,65 @@
+#Sesso:
+#0 -> Uomo
+#1-> Donna
+
+#Barba:
+#true -> Si
+#false -> No
+
+#Baffi:
+#true -> Si
+#false -> No
+
+#Capelli:
+#0 -> Calvo
+#1 -> Lisci
+#2 -> Mossi
+#3 -> Ricci
+
+#Colore Capelli:
+#0 -> Bianchi
+#1 -> Biondi
+#2 -> Rossi
+#3 -> Marroni
+#4 -> Neri
+
+#Colore Occhi:
+#0 -> Azzurri
+#1 -> Marroni
+#2 -> Neri
+
+#Cappello:
+#true -> Si
+#false -> No
+
+#Occhiali
+#true -> Si
+#false -> No
+
+Personaggi:
+  mostra_nome: true #Mostra il nome sotto a ogni foto
+  1:
+    nome: 'Amendola'
+    sesso: 0
+    barba: true
+    baffi: true
+    cappello: false
+    occhiali: true
+    capelli: 1
+    colore_capelli: 4
+    colore_occhi: 2
+    foto: 'resources/amendola.png'
+
+  2:
+    nome: 'Battimelli'
+    sesso: 0
+    barba: true
+    baffi: true
+    cappello: false
+    occhiali: false
+    capelli: 2
+    colore_capelli: 3
+    colore_occhi: 2
+    foto: 'resources/battimelli.png'
+
+
