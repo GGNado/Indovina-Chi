@@ -36,7 +36,8 @@ public class Frame extends JFrame {
         panel.setBackground(Color.WHITE);
 
         String[] domande = {"È un uomo?", "È una donna?", "Ha gli occhiali?", "Ha il cappello?",
-                            "Ha la barba?", "Ha i baffi?", "Ha i capelli lisci?"};
+                            "Ha la barba?", "Ha i baffi?", "Ha i capelli lisci?", "È calvo?",
+                            "Ha i capelli mossi?", "Ha i capelli ricci?"};
         JComboBox<String> domanda = new JComboBox<>(domande);
         domanda.setSelectedIndex(0);
         domanda.setBounds(1200, 50, domanda.getPreferredSize().width, domanda.getPreferredSize().height);
@@ -65,7 +66,23 @@ public class Frame extends JFrame {
                     }
                 }
             });
-
+            la.addMouseListener(new MouseAdapter(){
+                @Override
+                public void mouseClicked(MouseEvent e){
+                    if (SwingUtilities.isRightMouseButton(e)){
+                        Persona personaInfo = persone.get(Integer.parseInt(la.getText()) - 1);
+                        JOptionPane.showMessageDialog(null, "Nome: " + personaInfo.getNome() +
+                                                                                    "\nSesso: " +  personaInfo.intSessoToString() +
+                                                                                    "\nCapelli: " + personaInfo.intCapelliToString() +
+                                                                                    "\nColore Capelli: " + personaInfo.intColoreCapelliToString() +
+                                                                                    "\nColore Occhi: " + personaInfo.intColoreOcchiToString() +
+                                                                                    "\nCappello:  " + personaInfo.boolToString(personaInfo.isHaCappello()) +
+                                                                                    "\nBarba: " + personaInfo.boolToString(personaInfo.isHaBarba()) +
+                                                                                    "\nBaffi: " + personaInfo.boolToString(personaInfo.isHaBaffi()) +
+                                                                                    "\nOcchiali: " + personaInfo.boolToString(personaInfo.isHaOcchiali()), "Scheda Personaggio", JOptionPane.INFORMATION_MESSAGE);
+                    }
+                }
+            });
             panel.add(la);
             bottoni.add(la);
         }
@@ -77,13 +94,38 @@ public class Frame extends JFrame {
                 int i = Integer.parseInt(button.getText());
                 Persona personaBottone = persone.get(i-1);
                 //HA CAPELLI LISCI
-                if (domanda.getSelectedIndex() == 6){
+
+                switch (domanda.getSelectedIndex()){
+                    case 6:
+                        //Capelli lisci 1
+                        risposta = game.controllaCapelli(personaScelta, personaBottone, button, 1);
+                        break;
+                    case 7:
+                        //Capelli calvo 0
+                        risposta = game.controllaCapelli(personaScelta, personaBottone, button, 0);
+                        break;
+                    case 8:
+                        //Capelli Mossi
+                        risposta = game.controllaCapelli(personaScelta, personaBottone, button, 2);
+                        break;
+                    case 9:
+                        //CapelliRicci
+                        risposta = game.controllaCapelli(personaScelta, personaBottone, button, 3);
+                        break;
+                    default:
+                        risposta = game.controllaDomanda(domanda.getSelectedIndex(), personaScelta, personaBottone);
+                        if (!risposta)
+                            button.setVisible(false);
+                }
+
+
+                /*if (domanda.getSelectedIndex() == 6){
                     risposta = game.controllaCapelli(personaScelta, personaBottone, button, 1);
                 } else {
                     risposta = game.controllaDomanda(domanda.getSelectedIndex(), personaScelta, personaBottone);
                     if (!risposta)
                         button.setVisible(false);
-                }
+                }*/
             }
             game.inviaMessaggio(domanda.getSelectedIndex(), personaScelta);
         });

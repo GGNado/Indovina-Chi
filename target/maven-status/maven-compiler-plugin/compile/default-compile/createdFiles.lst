@@ -1,5 +1,6 @@
 com/gigi/Main.class
 com/gigi/Game.class
 com/gigi/Frame.class
+com/gigi/Frame$1.class
 com/gigi/Persona.class
 com/gigi/managers/FileManager.class

@@ -88,6 +88,23 @@ public class Game {
                 else
                     creaMessaggio("No, il personaggio che ho scelto non ha i capelli lisci");
                 break;
+            case 7:
+                if (personaScelta.getCapelli() == 0)
+                    creaMessaggio("Si, il personaggio che ho scelto è Calvo");
+                else
+                    creaMessaggio("No, il personaggio che ho scelto non è Calvo");
+                break;
+            case 8:
+                if (personaScelta.getCapelli() == 2)
+                    creaMessaggio("Si, il personaggio che ho scelto ha i capelli mossi");
+                else
+                    creaMessaggio("No, il personaggio che ho scelto non ha i capelli mossi");
+                break;
+            case 9:
+                if (personaScelta.getCapelli() == 3)
+                    creaMessaggio("Si, il personaggio che ho scelto ha i capelli ricci");
+                else
+                    creaMessaggio("No, il personaggio che ho scelto non ha i capelli ricci");
 
         }
     }

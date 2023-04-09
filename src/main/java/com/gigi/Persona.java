@@ -112,6 +112,69 @@ public class Persona {
         this.fotoPath = fotoPath;
     }
 
+    public String intCapelliToString(){
+        switch (getCapelli()){
+            case 0:
+                return "Calvo";
+            case 1:
+                return "Lisci";
+            case 2:
+                return "Mossi";
+            case 3:
+                return "Ricci";
+        }
+
+        return "Errore";
+    }
+
+    public String intColoreCapelliToString(){
+        switch (getColoreCapelli()){
+            case 0:
+                return "Bianchi";
+            case 1:
+                return "Biondi";
+            case 2:
+                return "Rossi";
+            case 3:
+                return "Marroni";
+            case 4:
+                return "Neri";
+        }
+
+        return "Errore";
+    }
+
+    public String intColoreOcchiToString(){
+        switch (getColoreOcchi()){
+            case 0:
+                return "Azzurri";
+            case 1:
+                return "Marroni";
+            case 2:
+                return "Neri";
+        }
+
+        return "Errore";
+    }
+
+    public String intSessoToString(){
+        switch (sesso){
+            case 0:
+                return "Uomo";
+            case 1:
+                return "Donna";
+        }
+
+        return "Errore";
+    }
+
+    public String boolToString(boolean haQualcosa){
+        if (haQualcosa)
+            return "Si";
+        else
+            return "No";
+    }
+
     @Override
     public String toString() {
         return "Persona{" +
