@@ -75,9 +75,15 @@ public class Frame extends JFrame {
             for (JButton button : bottoni){
                 int i = Integer.parseInt(button.getText());
                 Persona personaBottone = persone.get(i-1);
-                boolean risposta = game.controllaDomanda(domanda.getSelectedIndex(), personaScelta, personaBottone);
-                if (!risposta)
-                    button.setVisible(false);
+
+                //HA CAPELLI LISCI
+                if (domanda.getSelectedIndex() == 6){
+                   game.controllaCapelli(personaScelta, personaBottone, button, 1);
+                } else {
+                    boolean risposta = game.controllaDomanda(domanda.getSelectedIndex(), personaScelta, personaBottone);
+                    if (!risposta)
+                        button.setVisible(false);
+                }
             }
         });
         panel.add(eseguiDomanda);
