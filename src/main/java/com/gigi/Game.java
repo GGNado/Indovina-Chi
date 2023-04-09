@@ -9,11 +9,6 @@ public class Game {
     public Game(){
         persone = new ArrayList<>();
     }
-    public void start() {
-        JOptionPane.showMessageDialog(null, "La partita è iniziata! Chiedi le giuste domande!");
-        Random random = new Random();
-    }
-
     public boolean controllaDomanda(int index, Persona persona, Persona personaBottone){
         switch (index){
             case 0: //Uomo
@@ -28,25 +23,76 @@ public class Game {
                 return persona.isHaBarba() == personaBottone.isHaBarba();
             case 5:
                 return persona.isHaBaffi() == personaBottone.isHaBaffi();
-            case 6:
-                return persona.getCapelli() == personaBottone.getCapelli();
-            case 7:
-
         }
 
         return false;
     }
 
-    public void controllaCapelli(Persona personaScelta, Persona personaBottone, JButton button, int tipoCapelli) {
+    public boolean controllaCapelli(Persona personaScelta, Persona personaBottone, JButton button, int tipoCapelli) {
         if (personaScelta.getCapelli() == tipoCapelli) {
             if (personaBottone.getCapelli() != tipoCapelli) {
                 button.setVisible(false);
+                return true;
             }
         } else {
             if (personaBottone.getCapelli() == tipoCapelli) {
                 button.setVisible(false);
+                return false;
             }
+        }
+
+        return true;
+    }
+
+    public void inviaMessaggio(int index, Persona personaScelta){
+        switch (index){
+            case 0:
+                if (personaScelta.getSesso() == 0)
+                    creaMessaggio("Si, il personaggio che ho scelto è Uomo");
+                else
+                    creaMessaggio("No, il peronaggio che ho scelto non è uomo");
+                break;
+            case 1:
+                if (personaScelta.getSesso() == 1)
+                    creaMessaggio("Si, il personaggio che ho scelto è Donna");
+                else
+                    creaMessaggio("No, il personaggio che ho scelto non è Donna");
+                break;
+            case 2:
+                if (personaScelta.isHaOcchiali())
+                    creaMessaggio("Si, il personaggio che ho scelto ha gli occhiali");
+                else
+                    creaMessaggio("No, il personaggio che ho scelto non ha gl ìi occhiali");
+                break;
+            case 3:
+                if (personaScelta.isHaCappello())
+                    creaMessaggio("Si, il personaggio che ho scelto ha il cappello");
+                else
+                    creaMessaggio("No, il personaggio che ho scelto non ha il cappello");
+                break;
+            case 4:
+                if (personaScelta.isHaBarba())
+                    creaMessaggio("Si, il personaggio che ho scelto ha la barba");
+                else
+                    creaMessaggio("No, il personaggio che ho scelto non ha la barba");
+                break;
+            case 5:
+                if (personaScelta.isHaBaffi())
+                    creaMessaggio("Si, il personaggio che ho scelto ha i baffi");
+                else
+                    creaMessaggio("No, il personaggio che ho scelto non ha i baffi");
+                break;
+            case 6:
+                if (personaScelta.getCapelli() == 1)
+                    creaMessaggio("Si, il personaggio che ho scelto ha i capelli lisci");
+                else
+                    creaMessaggio("No, il personaggio che ho scelto non ha i capelli lisci");
+                break;
+
         }
     }
 
+    private void creaMessaggio(String str){
+        JOptionPane.showMessageDialog(null, str);
+    }
 }

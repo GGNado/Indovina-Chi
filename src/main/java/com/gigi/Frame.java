@@ -11,6 +11,7 @@ import java.util.Random;
 
 public class Frame extends JFrame {
     private Game game;
+    private boolean risposta;
     private ArrayList<Persona> persone;
     private ArrayList<JButton> bottoni;
     int x = 0;
@@ -57,10 +58,10 @@ public class Frame extends JFrame {
             }
 
             la.addActionListener(e -> {
-                int x = JOptionPane.showConfirmDialog(null, "Confermi che il personaggio scelto dal PC è " + la.getText() + "?", "Confermi", JOptionPane.YES_NO_OPTION);
+                int x = JOptionPane.showConfirmDialog(null, "Confermi che il personaggio scelto dal PC è " + persone.get(Integer.parseInt(la.getText()) - 1).getNome() + "?", "Confermi", JOptionPane.YES_NO_OPTION);
                 if (x == 0){
                     if (personaScelta.equals(persone.get(Integer.parseInt(la.getText()) - 1))){
-                        JOptionPane.showMessageDialog(null, "BRAVO MUSELLA, HAI VINTO", "WINNER MUFE", JOptionPane.INFORMATION_MESSAGE);
+                        JOptionPane.showMessageDialog(null, "BRAVO HAI VINTO", "Complimenti", JOptionPane.INFORMATION_MESSAGE);
                     }
                 }
             });
@@ -75,16 +76,16 @@ public class Frame extends JFrame {
             for (JButton button : bottoni){
                 int i = Integer.parseInt(button.getText());
                 Persona personaBottone = persone.get(i-1);
-
                 //HA CAPELLI LISCI
                 if (domanda.getSelectedIndex() == 6){
-                   game.controllaCapelli(personaScelta, personaBottone, button, 1);
+                    risposta = game.controllaCapelli(personaScelta, personaBottone, button, 1);
                 } else {
-                    boolean risposta = game.controllaDomanda(domanda.getSelectedIndex(), personaScelta, personaBottone);
+                    risposta = game.controllaDomanda(domanda.getSelectedIndex(), personaScelta, personaBottone);
                     if (!risposta)
                         button.setVisible(false);
                 }
             }
+            game.inviaMessaggio(domanda.getSelectedIndex(), personaScelta);
         });
         panel.add(eseguiDomanda);
 
