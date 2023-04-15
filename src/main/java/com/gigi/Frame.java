@@ -27,7 +27,7 @@ public class Frame extends JFrame {
         bottoni = new ArrayList<>();
 
         Random random = new Random();
-        int randomNumber = random.nextInt(10);
+        int randomNumber = random.nextInt(21) + 1;
 
         Persona personaScelta = persone.get(randomNumber);
         System.out.println(personaScelta);
@@ -37,13 +37,15 @@ public class Frame extends JFrame {
 
         String[] domande = {"È un uomo?", "È una donna?", "Ha gli occhiali?", "Ha il cappello?",
                             "Ha la barba?", "Ha i baffi?", "Ha i capelli lisci?", "È calvo?",
-                            "Ha i capelli mossi?", "Ha i capelli ricci?"};
+                            "Ha i capelli mossi?", "Ha i capelli ricci?", "Ha i capelli di colore Bianco?",
+                            "Ha i capelli di colore Biondi?", "Ha i capelli di colore Rossi?",
+                            "Ha i capelli di colore Marroni?", "Ha i capelli di colore Nero?"};
         JComboBox<String> domanda = new JComboBox<>(domande);
         domanda.setSelectedIndex(0);
-        domanda.setBounds(1200, 50, domanda.getPreferredSize().width, domanda.getPreferredSize().height);
+        domanda.setBounds(1100, 50, domanda.getPreferredSize().width, domanda.getPreferredSize().height);
         panel.add(domanda);
 
-        for (int i = 1; i <= 10; i++) {
+        for (int i = 1; i <= 21; i++) {
             JButton la = new JButton("" + i);
             la.setFont(new Font("", Font.PLAIN, 1));
             la.setForeground(Color.WHITE);
@@ -63,6 +65,13 @@ public class Frame extends JFrame {
                 if (x == 0){
                     if (personaScelta.equals(persone.get(Integer.parseInt(la.getText()) - 1))){
                         JOptionPane.showMessageDialog(null, "BRAVO HAI VINTO", "Complimenti", JOptionPane.INFORMATION_MESSAGE);
+                        int riavviare = JOptionPane.showConfirmDialog(null, "Vuoi rigiocare?", "Riavviare?", JOptionPane.YES_NO_OPTION);
+                        if (riavviare == JOptionPane.YES_OPTION)
+                            System.out.println("riavvio");
+                        else
+                            this.dispose();
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Sbagliato", "", JOptionPane.INFORMATION_MESSAGE);
                     }
                 }
             });
@@ -111,6 +120,26 @@ public class Frame extends JFrame {
                     case 9:
                         //CapelliRicci
                         risposta = game.controllaCapelli(personaScelta, personaBottone, button, 3);
+                        break;
+                    case 10:
+                        //Capelli Bianchi
+                        risposta = game.controllaColoreCapelli(personaScelta, personaBottone, button, 0);
+                        break;
+                    case 11:
+                        //Capelli Biondi
+                        risposta = game.controllaColoreCapelli(personaScelta, personaBottone, button, 1);
+                        break;
+                    case 12:
+                        //Capelli Rossi
+                        risposta = game.controllaColoreCapelli(personaScelta, personaBottone, button, 2);
+                        break;
+                    case 13:
+                        //Capelli Marroni
+                        risposta = game.controllaColoreCapelli(personaScelta, personaBottone, button, 3);
+                        break;
+                    case 14:
+                        //Capelli Neri
+                        risposta = game.controllaColoreCapelli(personaScelta, personaBottone, button, 4);
                         break;
                     default:
                         risposta = game.controllaDomanda(domanda.getSelectedIndex(), personaScelta, personaBottone);

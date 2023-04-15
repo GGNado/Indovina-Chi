@@ -44,6 +44,22 @@ public class Game {
         return true;
     }
 
+    public boolean controllaColoreCapelli(Persona personaScelta, Persona personaBottone, JButton button, int coloreCapelli){
+        if (personaScelta.getColoreCapelli() == coloreCapelli) {
+            if (personaBottone.getColoreCapelli() != coloreCapelli) {
+                button.setVisible(false);
+                return true;
+            }
+        } else {
+            if (personaBottone.getColoreCapelli() == coloreCapelli) {
+                button.setVisible(false);
+                return false;
+            }
+        }
+
+        return true;
+    }
+
     public void inviaMessaggio(int index, Persona personaScelta){
         switch (index){
             case 0:
@@ -105,7 +121,37 @@ public class Game {
                     creaMessaggio("Si, il personaggio che ho scelto ha i capelli ricci");
                 else
                     creaMessaggio("No, il personaggio che ho scelto non ha i capelli ricci");
-
+                break;
+            case 10:
+                if (personaScelta.getColoreCapelli() == 0)
+                    creaMessaggio("Si, il personaggio che ho scelto ha i capelli Bianchi");
+                else
+                    creaMessaggio("No, il personaggio che ho scelto non ha i capelli Bianchi");
+                break;
+            case 11:
+                if (personaScelta.getColoreCapelli() == 1)
+                    creaMessaggio("Si, il personaggio che ho scelto ha i capelli Biondi");
+                else
+                    creaMessaggio("No, il personaggio che ho scelto non ha i capelli Bianchi");
+                break;
+            case 12:
+                if (personaScelta.getColoreCapelli() == 2)
+                    creaMessaggio("Si, il personaggio che ho scelto ha i capelli Rossi");
+                else
+                    creaMessaggio("No, il personaggio che ho scelto non ha i capelli Rossi");
+                break;
+            case 13:
+                if (personaScelta.getColoreCapelli() == 3)
+                    creaMessaggio("Si, il personaggio che ho scelto ha i capelli Marroni");
+                else
+                    creaMessaggio("No, il personaggio che ho scelto non ha i capelli Marroni");
+                break;
+            case 14:
+                if (personaScelta.getColoreCapelli() == 4)
+                    creaMessaggio("Si, il personaggio che ho scelto ha i capelli Neri");
+                else
+                    creaMessaggio("No, il personaggio che ho scelto non ha i capelli Neri");
+                break;
         }
     }
 

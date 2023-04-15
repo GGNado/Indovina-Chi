@@ -37,7 +37,7 @@ public class Main {
 
         FileManager fileManager = new FileManager(new File("resources/files/config.yml"));
         ArrayList<Persona> persone = new ArrayList<>();
-        for (int i = 1; i <= 10; i++) {
+        for (int i = 1; i <= 21; i++) {
             persone.add(fileManager.getPersona(i));
         }
 

@@ -39,124 +39,256 @@
 Personaggi:
   mostra_nome: true #Mostra il nome sotto a ogni foto
   1:
-    nome: 'Amendola'
-    sesso: 0
-    barba: true
-    baffi: true
-    cappello: false
-    occhiali: true
-    capelli: 1
-    colore_capelli: 4
-    colore_occhi: 2
-    foto: 'resources/custom/amendola.png'
-
-  2:
-    nome: 'Battimelli'
-    sesso: 0
-    barba: true
-    baffi: true
-    cappello: false
-    occhiali: false
-    capelli: 2
-    colore_capelli: 3
-    colore_occhi: 2
-    foto: 'resources/img/20.jpg'
-
-  3:
-    nome: 'Paciello'
+    nome: 'Alfred'
     sesso: 0
     barba: false
-    baffi: false
-    cappello: false
-    occhiali: true
-    capelli: 2
-    colore_capelli: 3
-    colore_occhi: 2
-    foto: 'resources/custom/paciello.png'
-
-  4:
-    nome: 'Musella'
-    sesso: 0
-    barba: true
     baffi: true
     cappello: false
     occhiali: false
-    capelli: 2
-    colore_capelli: 4
-    colore_occhi: 2
-    foto: 'resources/custom/musella.png'
-
-  5:
-    nome: 'Chiaramonte'
-    sesso: 0
-    barba: true
-    baffi: true
-    cappello: false
-    occhiali: true
     capelli: 1
-    colore_capelli: 4
+    colore_capelli: 2
     colore_occhi: 2
-    foto: 'resources/custom/chiaramonte.png'
+    foto: 'resources/img/1.jpg'
 
-  6:
-    nome: 'Russo'
-    sesso: 0
-    barba: true
-    baffi: false
-    cappello: false
-    occhiali: true
-    capelli: 2
-    colore_capelli: 4
-    colore_occhi: 2
-    foto: 'resources/img/6.jpg'
-
-  7:
-    nome: 'Langellotti'
-    sesso: 0
+  2:
+    nome: 'Anita'
+    sesso: 1
     barba: false
     baffi: false
     cappello: false
     occhiali: false
     capelli: 1
     colore_capelli: 1
+    colore_occhi: 2
+    foto: 'resources/img/2.jpg'
+
+  3:
+    nome: 'Anne'
+    sesso: 1
+    barba: false
+    baffi: false
+    cappello: false
+    occhiali: false
+    capelli: 3
+    colore_capelli: 4
+    colore_occhi: 2
+    foto: 'resources/img/3.jpg'
+
+  4:
+    nome: 'Bernard'
+    sesso: 0
+    barba: false
+    baffi: false
+    cappello: true
+    occhiali: false
+    capelli: 1
+    colore_capelli: 3
+    colore_occhi: 2
+    foto: 'resources/img/4.jpg'
+
+  5:
+    nome: 'Bill'
+    sesso: 0
+    barba: true
+    baffi: false
+    cappello: false
+    occhiali: false
+    capelli: 0
+    colore_capelli: 4
+    colore_occhi: 2
+    foto: 'resources/img/5.jpg'
+
+  6:
+    nome: 'Charles'
+    sesso: 0
+    barba: false
+    baffi: true
+    cappello: false
+    occhiali: false
+    capelli: 1
+    colore_capelli: 1
+    colore_occhi: 2
+    foto: 'resources/img/6.jpg'
+
+  7:
+    nome: 'Claire'
+    sesso: 1
+    barba: false
+    baffi: false
+    cappello: true
+    occhiali: true
+    capelli: 1
+    colore_capelli: 1
     colore_occhi: 1
-    foto: 'resources/custom/langelotti.png'
+    foto: 'resources/img/7.jpg'
 
   8:
-    nome: 'Pontecorvo'
+    nome: 'David'
+    sesso: 0
+    barba: true
+    baffi: false
+    cappello: false
+    occhiali: false
+    capelli: 1
+    colore_capelli: 3
+    colore_occhi: 2
+    foto: 'resources/img/8.jpg'
+
+  9:
+    nome: 'Eric'
+    sesso: 0
+    barba: false
+    baffi: false
+    cappello: true
+    occhiali: false
+    capelli: 1
+    colore_capelli: 3
+    colore_occhi: 2
+    foto: 'resources/img/9.jpg'
+
+  10:
+    nome: 'Frans'
     sesso: 0
     barba: false
     baffi: false
     cappello: false
     occhiali: false
+    capelli: 3
+    colore_capelli: 4
+    colore_occhi: 2
+    foto: 'resources/img/10.jpg'
+
+  11:
+    nome: 'George'
+    sesso: 0
+    barba: false
+    baffi: false
+    cappello: true
+    occhiali: false
+    capelli: 1
+    colore_capelli: 0
+    colore_occhi: 1
+    foto: 'resources/img/11.jpg'
+
+  12:
+    nome: 'Herman'
+    sesso: 0
+    barba: false
+    baffi: false
+    cappello: false
+    occhiali: false
+    capelli: 0
+    colore_capelli: 2
+    colore_occhi: 2
+    foto: 'resources/img/12.jpg'
+
+  13:
+    nome: 'Joe'
+    sesso: 0
+    barba: false
+    baffi: false
+    cappello: false
+    occhiali: true
+    capelli: 3
+    colore_capelli: 1
+    colore_occhi: 2
+    foto: 'resources/img/13.jpg'
+
+  14:
+    nome: 'Maria'
+    sesso: 1
+    barba: false
+    baffi: false
+    cappello: true
+    occhiali: false
     capelli: 2
     colore_capelli: 3
     colore_occhi: 2
-    foto: 'resources/custom/pontecorvo.png'
+    foto: 'resources/img/14.jpg'
 
-  9:
-    nome: 'Dapice'
+  15:
+    nome: 'Max'
+    sesso: 0
+    barba: false
+    baffi: true
+    cappello: false
+    occhiali: false
+    capelli: 3
+    colore_capelli: 4
+    colore_occhi: 2
+    foto: 'resources/img/15.jpg'
+
+  16:
+    nome: 'Paul'
     sesso: 0
     barba: false
     baffi: false
     cappello: false
     occhiali: true
     capelli: 2
-    colore_capelli: 3
+    colore_capelli: 0
     colore_occhi: 2
-    foto: 'resources/custom/dapice.png'
+    foto: 'resources/img/16.jpg'
 
-  10:
-    nome: 'Chiaramonte'
+  17:
+    nome: 'Peter'
+    sesso: 0
+    barba: false
+    baffi: false
+    cappello: false
+    occhiali: false
+    capelli: 1
+    colore_capelli: 0
+    colore_occhi: 2
+    foto: 'resources/img/17.jpg'
+
+  18:
+    nome: 'Philip'
+    sesso: 0
+    barba: true
+    baffi: false
+    cappello: false
+    occhiali: false
+    capelli: 3
+    colore_capelli: 4
+    colore_occhi: 2
+    foto: 'resources/img/18.jpg'
+
+  19:
+    nome: 'Richard'
     sesso: 0
     barba: true
     baffi: true
     cappello: false
-    occhiali: true
-    capelli: 1
-    colore_capelli: 4
+    occhiali: false
+    capelli: 0
+    colore_capelli: 3
     colore_occhi: 2
-    foto: 'resources/custom/musella.png'
+    foto: 'resources/img/19.jpg'
+
+  20:
+    nome: 'Robert'
+    sesso: 0
+    barba: false
+    baffi: false
+    cappello: false
+    occhiali: false
+    capelli: 1
+    colore_capelli: 3
+    colore_occhi: 2
+    foto: 'resources/img/20.jpg'
+
+  21:
+    nome: 'Sam'
+    sesso: 0
+    barba: false
+    baffi: false
+    cappello: false
+    occhiali: false
+    capelli: 0
+    colore_capelli: 0
+    colore_occhi: 2
+    foto: 'resources/img/21.jpg'
 
 
 
