@@ -1,5 +1,7 @@
 package com.gigi;
 
+import jdk.jfr.Frequency;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -18,7 +20,7 @@ public class Frame extends JFrame {
     int y = 0;
     public Frame(ArrayList<Persona> persone){
         game = new Game();
-        setTitle("Indovina chi");
+        setTitle("Indovina chi vuoi tu!");
         setSize(1400, 700);
         setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -39,7 +41,8 @@ public class Frame extends JFrame {
                             "Ha la barba?", "Ha i baffi?", "Ha i capelli lisci?", "È calvo?",
                             "Ha i capelli mossi?", "Ha i capelli ricci?", "Ha i capelli di colore Bianco?",
                             "Ha i capelli di colore Biondi?", "Ha i capelli di colore Rossi?",
-                            "Ha i capelli di colore Marroni?", "Ha i capelli di colore Nero?"};
+                            "Ha i capelli di colore Marroni?", "Ha i capelli di colore Nero?", "Ha gli occhi Azzurri?",
+                            "Ha gli occhi Marroni?", "Ha gli occhi Neri?"};
         JComboBox<String> domanda = new JComboBox<>(domande);
         domanda.setSelectedIndex(0);
         domanda.setBounds(1100, 50, domanda.getPreferredSize().width, domanda.getPreferredSize().height);
@@ -66,10 +69,13 @@ public class Frame extends JFrame {
                     if (personaScelta.equals(persone.get(Integer.parseInt(la.getText()) - 1))){
                         JOptionPane.showMessageDialog(null, "BRAVO HAI VINTO", "Complimenti", JOptionPane.INFORMATION_MESSAGE);
                         int riavviare = JOptionPane.showConfirmDialog(null, "Vuoi rigiocare?", "Riavviare?", JOptionPane.YES_NO_OPTION);
-                        if (riavviare == JOptionPane.YES_OPTION)
-                            System.out.println("riavvio");
-                        else
+                        if (riavviare == JOptionPane.YES_OPTION) {
                             this.dispose();
+                            new Frame(persone);
+                        }else {
+                            this.dispose();
+                            new FrameStart(persone);
+                        }
                     } else {
                         JOptionPane.showMessageDialog(null, "Sbagliato", "", JOptionPane.INFORMATION_MESSAGE);
                     }
@@ -141,20 +147,23 @@ public class Frame extends JFrame {
                         //Capelli Neri
                         risposta = game.controllaColoreCapelli(personaScelta, personaBottone, button, 4);
                         break;
+                    case 15:
+                        //Occhi Azzurri
+                        risposta = game.controllaOcchi(personaScelta, personaBottone, button, 0);
+                        break;
+                    case 16:
+                        //Occhi Marroni
+                        risposta = game.controllaOcchi(personaScelta, personaBottone, button, 1);
+                        break;
+                    case 17:
+                        //Occhi neri
+                        risposta = game.controllaOcchi(personaScelta, personaBottone, button, 2);
+                        break;
                     default:
                         risposta = game.controllaDomanda(domanda.getSelectedIndex(), personaScelta, personaBottone);
                         if (!risposta)
                             button.setVisible(false);
                 }
-
-
-                /*if (domanda.getSelectedIndex() == 6){
-                    risposta = game.controllaCapelli(personaScelta, personaBottone, button, 1);
-                } else {
-                    risposta = game.controllaDomanda(domanda.getSelectedIndex(), personaScelta, personaBottone);
-                    if (!risposta)
-                        button.setVisible(false);
-                }*/
             }
             game.inviaMessaggio(domanda.getSelectedIndex(), personaScelta);
         });

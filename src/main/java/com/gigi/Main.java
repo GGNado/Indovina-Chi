@@ -28,9 +28,6 @@ public class Main {
             File destDir = new File(destPath);
             FileUtils.forceMkdir(destDir);
             File destFile = new File(destDir, "files/config.yml");
-            System.out.println(destPath);
-            System.out.println(destFile);
-            System.out.println(inputStream);
             if (!destFile.exists())
                 FileUtils.copyInputStreamToFile(inputStream, destFile);
         }
@@ -41,6 +38,6 @@ public class Main {
             persone.add(fileManager.getPersona(i));
         }
 
-        new Frame(persone);
+        new FrameStart(persone);
     }
 }

@@ -9,5 +9,8 @@
         <module name="Indovina_Chi" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Indovina Chi" target="19" />
+    </bytecodeTargetLevel>
   </component>
 </project>

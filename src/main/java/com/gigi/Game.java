@@ -60,6 +60,22 @@ public class Game {
         return true;
     }
 
+    public boolean controllaOcchi(Persona personaScelta, Persona personaBottone, JButton button, int coloreOcchi){
+        if (personaScelta.getColoreOcchi() == coloreOcchi) {
+            if (personaBottone.getColoreOcchi() != coloreOcchi) {
+                button.setVisible(false);
+                return true;
+            }
+        } else {
+            if (personaBottone.getColoreOcchi() == coloreOcchi) {
+                button.setVisible(false);
+                return false;
+            }
+        }
+
+        return true;
+    }
+
     public void inviaMessaggio(int index, Persona personaScelta){
         switch (index){
             case 0:
@@ -78,7 +94,7 @@ public class Game {
                 if (personaScelta.isHaOcchiali())
                     creaMessaggio("Si, il personaggio che ho scelto ha gli occhiali");
                 else
-                    creaMessaggio("No, il personaggio che ho scelto non ha gl ìi occhiali");
+                    creaMessaggio("No, il personaggio che ho scelto non ha gli occhiali");
                 break;
             case 3:
                 if (personaScelta.isHaCappello())
@@ -151,6 +167,24 @@ public class Game {
                     creaMessaggio("Si, il personaggio che ho scelto ha i capelli Neri");
                 else
                     creaMessaggio("No, il personaggio che ho scelto non ha i capelli Neri");
+                break;
+            case 15:
+                if (personaScelta.getColoreOcchi() == 0)
+                    creaMessaggio("Si, il personaggio che ho scelto ha gli occhi Azzurri");
+                else
+                    creaMessaggio("No, il personaggio che ho scelto non ha gli occhi Azzurri");
+                break;
+            case 16:
+                if (personaScelta.getColoreOcchi() == 1)
+                    creaMessaggio("Si, il personaggio che ho scelto ha gli occhi Marroni");
+                else
+                    creaMessaggio("No, il personaggio che ho scelto non ha gli occhi Marroni");
+                break;
+            case 17:
+                if (personaScelta.getColoreOcchi() == 2)
+                    creaMessaggio("Si, il personaggio che ho scelto ha gli occhi Neri");
+                else
+                    creaMessaggio("No, il personaggio che ho scelto non ha gli occhi Neri");
                 break;
         }
     }
